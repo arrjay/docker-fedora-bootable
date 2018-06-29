@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ln -sf /var/run/systemd/resolve/resolv.conf /etc/resolv.conf

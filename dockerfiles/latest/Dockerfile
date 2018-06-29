@@ -42,6 +42,8 @@ ADD /cloud.cfg.d /etc/cloud/cloud.cfg.d
 RUN ln -sf /lib/systemd/system/systemd-networkd.service "/etc/systemd/system/multi-user.target.wants/systemd-networkd.service" && \
     mkdir -p "/etc/systemd/system/sockets.target.wants" && \
     ln -sf /lib/systemd/system/systemd-networkd.socket  "/etc/systemd/system/sockets.target.wants/systemd-networkd.service" && \
+    ln -sf /usr/lib/systemd/system/systemd-resolved.service /etc/systemd/system/dbus-org.freedesktop.resolve1.service && \
+    ln -sf /usr/lib/systemd/system/systemd-resolved.service Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.service && \
     ln -sf /dev/null "/etc/systemd/system/dhcpcd.service" && \
     ln -sf /dev/null "/etc/systemd/system/NetworkManager.service" && \
     ln -sf /dev/null "/etc/systemd/system/networking.service" && \
