@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+kerns=(/boot/vmlinuz-*)
+
+for k in "${kerns[@]}" ; do
+  v="${k#/boot/vmlinuz-}"
+  dracut -v -f "/boot/initramfs-${v}.img" "${v}"
+done
