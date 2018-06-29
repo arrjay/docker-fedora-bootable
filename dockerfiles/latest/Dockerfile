@@ -12,6 +12,7 @@ RUN dnf -y install hostname parted lvm2 cryptsetup mdadm xfsprogs \
                    sudo passwd authconfig chrony \
                    smartmontools ethtool lm_sensors \
                    vim-minimal \
+		   crontabs \
                    tboot \
                    kernel \
                    && \
