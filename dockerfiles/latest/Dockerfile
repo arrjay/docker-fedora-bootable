@@ -4,14 +4,13 @@ MAINTAINER RJ Bergeron <rbergero@gmail.com>
 
 # install packages
 RUN dnf -y install hostname parted lvm2 cryptsetup mdadm xfsprogs \
-                   grub grub2-tools grub2 grub2-efi grub2-efi-modules \
+                   grub2-tools grub2 grub2-efi grub2-efi-modules \
                    shim efibootmgr \
                    augeas \
                    selinux-policy-targeted \
                    NetworkManager openssh-server openssh-clients cloud-init \
-                   sudo extendroot passwd authconfig epel-release chrony \
-                   systemd-networkd \
-                   smartmontools ethtool lm-sensors \
+                   sudo passwd authconfig chrony \
+                   smartmontools ethtool lm_sensors \
                    vim-minimal \
                    tboot \
                    kernel \
