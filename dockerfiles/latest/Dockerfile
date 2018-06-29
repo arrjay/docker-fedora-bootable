@@ -27,7 +27,7 @@ RUN groupadd -g 1024 ejusdem && \
     usermod -G wheel ejusdem
 
 # reconfigure sudo
-RUN bash -c 'autosudo=$(mktemp) && \
+RUN mkdir -p /tmp && bash -c 'autosudo=$(mktemp) && \
     printf \#\!/bin/bash\\nsed\ -i\ -e\ \"s@^%%wheel.*@%%wheel\ ALL=\(ALL:ALL\)\ NOPASSWD:\ ALL@\"\ \${2} > "${autosudo}" && \
     chmod +x "${autosudo}" && \
     env EDITOR="${autosudo}" visudo && \
