@@ -3,7 +3,7 @@ FROM fedora
 MAINTAINER RJ Bergeron <rbergero@gmail.com>
 
 # install packages
-RUN yum -y install hostname parted lvm2 cryptsetup mdadm xfsprogs \
+RUN dnf -y install hostname parted lvm2 cryptsetup mdadm xfsprogs \
                    grub grub2-tools grub2 grub2-efi grub2-efi-modules \
                    shim efibootmgr \
                    augeas \
@@ -16,7 +16,7 @@ RUN yum -y install hostname parted lvm2 cryptsetup mdadm xfsprogs \
                    tboot \
                    kernel \
                    && \
-    yum clean all && rm -rf /var/cache/yum &&\
+    dnf clean all && rm -rf /var/cache/yum &&\
     find / -type d \( -name proc -o -name sys \) -prune -o -iname \*.rpmnew -exec rm {} \;
 
 # add grub bits
